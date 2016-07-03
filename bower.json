@@ -1,0 +1,25 @@
+{
+  "name": "vue-loader_stu",
+  "description": "",
+  "main": "main.js",
+  "authors": [
+    "yicj"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "vue",
+    "study"
+  ],
+  "homepage": "https://github.com/yichengjie/vue-loader_stu",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}
