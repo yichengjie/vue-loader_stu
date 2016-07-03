@@ -8,7 +8,7 @@ var SCRIPTS_PATH = path.resolve('./src/scripts');
 module.exports = {
   entry: {
     "commonStyle":"./src/styles/commonStyle.js",
-    "main":"./src/scripts/main.js"
+    "index":"./src/scripts/index.js"
   },
   output: {
     path: __dirname+"/dist",
