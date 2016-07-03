@@ -1,5 +1,5 @@
 <template>
-  <div class="example">这是一个测试程序 hello world</div>
+  <div class="example">这是一个hello world测试程序 test hello world</div>
 </template>
 
 <script>
