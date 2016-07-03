@@ -1,33 +1,38 @@
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var path = require('path') ;
+
+var CSS_PATH = path.resolve('./src/styles/css');
+var SCRIPTS_PATH = path.resolve('./src/scripts');
+
 module.exports = {
-  // entry point of our application
-  entry: './src/main.js',
-  // where to place the compiled bundle
+  entry: {
+    "commonStyle":"./src/styles/commonStyle.js",
+    "main":"./src/scripts/main.js"
+  },
   output: {
     path: __dirname+"/dist",
-    filename: 'build.js'
+    filename: '[name].js'
   },
   module: {
-    // `loaders` is an array of loaders to use.
-    // here we are only configuring vue-loader
     loaders: [
-      {
-        test: /\.vue$/, // a regex for matching all files that end in `.vue`
-        loader: 'vue'   // loader to use for matched files
-      },
-      {
-        // use babel-loader for *.js files
-        test: /\.js$/,
-        loader: 'babel',
-        // important: exclude files in node_modules
-        // otherwise it's going to be really slow!
-        exclude: /node_modules/
-      }
+      {test: /\.vue$/,loader: 'vue'},
+      {test: /\.js$/,loader: 'babel',exclude: /node_modules/},
+      {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
+      {test: /\.(jpg|png|gif)$/, loader: "url?limit=8192&name=images/[name].[hash:8].[ext]"},
+      {test: /\.(eot|woff|ttf|svg)$/, loader: "file-loader?name=file/[name].[hash:8].[ext]" }
     ]
   },
-  // if you are using babel-loader directly then
-  // the babel config block becomes required.
+  resolve: {
+        alias: {
+            css_path:CSS_PATH,
+            scripts_path:SCRIPTS_PATH
+        }
+  },
   babel: {
     presets: ['es2015'],
     plugins: ['transform-runtime']
-  }
-}
+  },
+   plugins: [
+        new ExtractTextPlugin("[name].css")
+   ]
+} ;
