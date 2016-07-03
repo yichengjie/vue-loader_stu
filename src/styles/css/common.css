@@ -11,8 +11,8 @@ body{
     background-color: #F2F4F7;
     min-width: 1000px;
     font-size: 12px;
-    font-family: 'Fira Mono', Monaco, 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace;
-    /* font-family: "lucida grande",Helvetica,Tahoma,Verdana,Arial,Microsoft YaHei,simsun,sans-serif; */
+    /* font-family: 'Fira Mono', Monaco, 'Andale Mono', 'Lucida Console', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace; */
+    font-family: "lucida grande",Helvetica,Tahoma,Verdana,Arial,Microsoft YaHei,simsun,sans-serif; 
     padding-bottom: 30px;
     padding-top: 106px;
 }

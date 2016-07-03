@@ -1,21 +1,18 @@
 <template>
   <div class="app">
-    <component-a></component-a>
-    <component-b></component-b>
     <header-comp></header-comp>
+    <query-main-comp></query-main-comp>
   </div>
 </template>
 
 <script>
-  import ComponentA from './ComponentA.vue' ;
-  import ComponentB from './ComponentB.vue' ;
+  import QueryMainComp from './QueryMainComp.vue' ;
   import HeaderComp from './HeaderComp.vue' ;
 
   export default {
     components: {
-      ComponentA,
-      ComponentB,
-      HeaderComp
+      HeaderComp,
+      QueryMainComp
     }
   }
 </script>

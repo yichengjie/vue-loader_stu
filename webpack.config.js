@@ -1,3 +1,4 @@
+var webpack = require('webpack') ;
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path') ;
 
@@ -24,6 +25,7 @@ module.exports = {
     ]
   },
   resolve: {
+        extensions:['','.js','.vue'],
         alias: {
             css_path:CSS_PATH,
             scripts_path:SCRIPTS_PATH
@@ -34,6 +36,12 @@ module.exports = {
     plugins: ['transform-runtime']
   },
    plugins: [
+        /*new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        }),*/
         new ExtractTextPlugin("[name].css")
    ]
+
 } ;
