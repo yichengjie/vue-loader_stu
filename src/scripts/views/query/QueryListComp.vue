@@ -35,7 +35,12 @@
 </template>
 
 <script>
+  import { getBrandGroup } from '../../vuex/getters' ;
   export default {
-    props:['list']
+   vuex: {
+     getters: {
+       list: getBrandGroup
+     }
+   }
   }
 </script>

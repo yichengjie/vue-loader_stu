@@ -7,14 +7,13 @@
         <button class="btn btn-danger btn-sm">删除</button>
     </div>
     <span class="clearfix"></span>
-    <query-list-comp v-bind:list="list"></query-list-comp>
+    <query-list-comp ></query-list-comp>
   </div>
 </template>
 
 <script type="text/javascript">
-  import QueryListComp from './QueryListComp.vue'
+  import QueryListComp from './QueryListComp.vue' ;
   export default {
-    props:['list'],
     components:{
       QueryListComp
     }
