@@ -9,7 +9,8 @@ module.exports = {
   entry: {
     "commonStyle":"./src/styles/commonStyle.js",
     "index":"./src/scripts/index.js",
-    "demo1":"./src/demo1/main.js"
+    "demo1":"./src/demo1/main.js",
+    "groupEdit":"./src/scripts/groupEdit.js"
   },
   output: {
     path: __dirname+"/dist",
