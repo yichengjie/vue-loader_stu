@@ -7,15 +7,15 @@
         <button class="btn btn-danger btn-sm">删除</button>
     </div>
     <span class="clearfix"></span>
-    <query-list-comp ></query-list-comp>
+    <brand-group-list></brand-group-list>
   </div>
 </template>
 
 <script type="text/javascript">
-  import QueryListComp from './QueryListComp.vue' ;
+  import BrandGroupList from './BrandGroupList.vue' ;
   export default {
     components:{
-      QueryListComp
+      BrandGroupList
     }
   }
 </script>

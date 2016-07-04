@@ -33,7 +33,7 @@
     <!--query section end-->
 </template>
 <script type="text/javascript">
-  import { queryBrandGroup } from '../vuex/actions';
+  import { queryBrandGroup } from '../../vuex/query/actions';
   export default {
     vuex: {
       actions: {

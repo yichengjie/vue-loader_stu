@@ -1,6 +1,6 @@
 import Vue from 'vue' ;
 import App from './views/query/App.vue' ;
-import store from './vuex/store' ;// import 我们刚刚创建的 store
+import store from './vuex/query/store' ;// import 我们刚刚创建的 store
 
 new Vue({
   el: 'body',

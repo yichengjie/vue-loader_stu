@@ -1,17 +1,17 @@
 <template>
   <div class="app">
-    <header-comp></header-comp>
-    <query-main-comp></query-main-comp>
+    <header-layout></header-layout>
+    <brand-group-main></brand-group-main>
   </div>
 </template>
 
 <script>
-  import QueryMainComp from './QueryMainComp.vue' ;
-  import HeaderComp from '../../components/HeaderComp.vue' ;
+  import BrandGroupMain from './BrandGroupMain.vue' ;
+  import HeaderLayout from './HeaderLayout.vue' ;
   export default {
     components: {
-      HeaderComp,
-      QueryMainComp
+      HeaderLayout,
+      BrandGroupMain
     }
   }
 </script>

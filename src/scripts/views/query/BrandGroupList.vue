@@ -35,7 +35,7 @@
 </template>
 
 <script>
-  import { getBrandGroup } from '../../vuex/getters' ;
+  import { getBrandGroup } from '../../vuex/query/getters' ;
   export default {
    vuex: {
      getters: {
