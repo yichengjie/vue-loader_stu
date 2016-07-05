@@ -44,6 +44,6 @@ module.exports = {
             }
         }),*/
         new ExtractTextPlugin("[name].css")
-   ]
-
+   ],
+   devtool:'eval-source-map'
 } ;

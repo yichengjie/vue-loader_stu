@@ -4,7 +4,7 @@
         <div class="query_row">
             <span class="query_title">发布状态 | 生效状态</span>
             <span class="pull-right marginR15">
-                <button type="button" class="btn btn-sm btn-success">保存</button>
+                <button type="button" class="btn btn-sm btn-success" @click ="saveFormData">保存</button>
             </span>
         </div>
     </div>
@@ -12,6 +12,11 @@
 </template>
 <script type="text/javascript">
   export default {
-    
+    methods:{
+        saveFormData(){
+            console.info(this.$validation) ;
+            console.info('保存表单数据!') ;
+        }
+    }
   }
 </script>
