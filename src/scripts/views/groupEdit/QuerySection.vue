@@ -14,8 +14,9 @@
   export default {
     methods:{
         saveFormData(){
-            console.info(this.$validation) ;
-            console.info('保存表单数据!') ;
+            //this.$emit('child-submit') ;
+            var params = {"name":"yicj","addr":"henan"} ;
+            this.$dispatch('child-submit',params) ;
         }
     }
   }
