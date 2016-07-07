@@ -2,8 +2,10 @@
 	<!--query section start-->
     <div class ="query_section">
         <div class="query_row">
-            <span class="query_title">发布状态 | 生效状态</span>
+            <span class="query_title">新建品牌集</span>
+            <span class="marginLR5">品牌集</span>
             <span class="pull-right marginR15">
+                <button type="button" class="btn btn-sm btn-default" onclick="window.location.href='index.html'">返回</button>
                 <button type="button" class="btn btn-sm btn-success" @click ="saveFormData">保存</button>
             </span>
         </div>
