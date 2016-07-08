@@ -13,7 +13,7 @@
                     <div class="form-group" v-bind:class ="{'has-error':$validation.sequenceNumber.required &&$validation.sequenceNumber.dirty}">
                         <label class="pure-u-1-8 control-label">序列号</label>
                         <div class="pure-u-1-4">
-                            <input type="text"  class="form-control"  v-validate:sequence-number="{required:true}"
+                            <input type="text" v-model ="sequenceNumber"  class="form-control"  v-validate:sequence-number="{required:true}"
                             placeholder="数字">
                         </div>
                         <span class="errors" v-if ="$validation.sequenceNumber.dirty">
@@ -24,27 +24,27 @@
                     <div class="form-group">
                         <label class="pure-u-1-8 control-label">品牌集名称</label>
                         <div class="pure-u-1-4">
-                            <input type="text"  class="form-control"  placeholder="数字">
+                            <input type="text" v-model ="brandName"  class="form-control"  placeholder="数字">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="pure-u-1-8 control-label">销售日期</label>
                         <div class="pure-u-1-8">
-                            <input type="text"  class="form-control"  placeholder="范围">
+                            <input type="text" v-model ="firstDate"  class="form-control"  placeholder="范围">
                         </div>
-                        <label for="id2" class="glyphicon glyphicon-th iconfont_box"></label>
+                        <label for="id2" class="glyphicon glyphicon-calendar iconfont_box"></label>
                         <div class="pure-u-1-8">
-                            <input type="text"  class="form-control"  placeholder="范围">
+                            <input type="text" v-model ="lastDate"  class="form-control"  placeholder="范围">
 
                         </div>
-                        <label for="id2" class="glyphicon glyphicon-th iconfont_box"></label>
+                        <label for="id2" class="glyphicon glyphicon-calendar iconfont_box"></label>
                     </div>
 
                     <div class="form-group">
                         <label class="pure-u-1-8 control-label">区域1</label>
                         <div class="pure-u-1-8">
-                            <select name="loc1" class="form-control">
+                            <select name="locType1" v-model ="locType1" class="form-control">
                                 <option value="">选择</option>
                                 <option value="A">A-大区</option>
                                 <option value="C">C-城市</option>
@@ -55,14 +55,14 @@
                             </select>
                         </div>
                         <div class="pure-u-1-8">
-                            <input type="text"  class="form-control"  placeholder="范围">
+                            <input type="text" v-model ="loc1"  class="form-control"  placeholder="范围">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="pure-u-1-8 control-label">区域2</label>
                         <div class="pure-u-1-8">
-                            <select name="loc2" class="form-control">
+                            <select name="locType2" v-model ="locType2" class="form-control">
                                 <option value="">选择</option>
                                 <option value="A">A-大区</option>
                                 <option value="C">C-城市</option>
@@ -73,7 +73,7 @@
                             </select>
                         </div>
                         <div class="pure-u-1-8">
-                            <input type="text"  class="form-control"  placeholder="范围">
+                            <input type="text" v-model ="loc2" class="form-control"  placeholder="范围">
                         </div>
                     </div>
 
@@ -81,13 +81,13 @@
                         <label class="pure-u-1-8 control-label">区域限制</label>
                         <div class="pure-u-1-2">
                             <div class="radio-inline">
-                                <input type="radio" id="r1"/><label for="r1" class="myhand">区域1→区域2</label>
+                                <input type="radio" id="r1"  v-model ="geo" value="1" /><label for="r1" class="myhand">区域1→区域2</label>
                             </div>
                             <div class="radio-inline">
-                                <input type="radio" id="r2"/><label for="r2" class="myhand">区域2→区域1</label>
+                                <input type="radio" id="r2" v-model ="geo" value ="2"/><label for="r2" class="myhand">区域2→区域1</label>
                             </div>
                             <div class="radio-inline">
-                                <input type="radio" id="r3"/><label for="r3" class="myhand">双向</label>
+                                <input type="radio" id="r3" v-model ="geo" value ="3"/><label for="r3" class="myhand">双向</label>
                             </div>
                         </div>
 
@@ -103,10 +103,10 @@
                     <div class="form-group">
                         <label class="pure-u-1-8 control-label">旅行日期</label>
                         <div class="pure-u-1-8">
-                            <input type="text"  class="form-control"  placeholder="范围">
+                            <input type="text" v-model ="travelStartDate" class="form-control"  placeholder="范围">
                         </div>
                         <div class="pure-u-1-8">
-                            <input type="text"  class="form-control"  placeholder="范围">
+                            <input type="text" v-model ="travelEndDate" class="form-control"  placeholder="范围">
                         </div>
                     </div>
 
@@ -122,7 +122,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr v-for ="l in list">
+                                    <tr v-for ="l in pubList">
                                     	<td >
 	                                        <select v-model ="l.pubType" class="common_input"  style="width: 98%">
 	                                            <option value="">选择</option>
@@ -150,7 +150,7 @@
                     <div class="form-group">
                         <label class="pure-u-1-8 control-label">描述</label>
                         <div class="pure-u-1-3">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" v-model ="descr" rows="3"></textarea>
                         </div>
                     </div>
 
@@ -179,15 +179,27 @@
   export default {
     data:function(){
       return {
-       	 list:[]
+         sequenceNumber:'',
+         brandName:'',
+         firstDate:'',
+         lastDate:'',
+         locType1:'',
+         loc1:'',
+         locType2:'',
+         loc2:'',
+         geo:'1',
+         travelStartDate:'',
+         travelEndDate:'',
+         pubList:[],
+         descr:''
       } ;
     },
     methods:{
     	addLine(){
-    		this.list.push({"pubType":"I","pubCode":""}) ;
+    		this.pubList.push({"pubType":"I","pubCode":""}) ;
     	},
     	deleteLine(){
-    		this.list.pop() ;
+    		this.pubList.pop() ;
     	}
     }
   }
