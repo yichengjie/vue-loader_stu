@@ -194,13 +194,25 @@
          descr:''
       } ;
     },
+    events:{
+        'parent-saveGroup':'saveFormData'
+    },
     methods:{
     	addLine(){
     		this.pubList.push({"pubType":"I","pubCode":""}) ;
     	},
     	deleteLine(){
     		this.pubList.pop() ;
-    	}
+    	},
+        saveFormData(params){//保存数据
+           let validator = this.$validation ;
+           changeInputStatus(this.$data,validator) ;
+           let vueFlag = validator.valid ;
+           console.info('vueFlag : ' + vueFlag) ;
+           console.info('formData : ' + JSON.stringify(this.$data)) ;
+           console.info('query params : ' + JSON.stringify(params)) ;
+           console.info('保存数据到后台!') ;
+        }
     }
   }
 </script>

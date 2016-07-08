@@ -14,17 +14,10 @@
        HeaderLayout,
        MainContent
     },
-    ready (){
-        var vm = this ;
-        this.$on('child-submit', function (params) {
-           console.info('提交表单按钮被点击') ;
-           /*let validator = this.$validation ;
-           changeInputStatus(vm.$data,validator) ;
-           let vueFlag = validator.valid ;
-           console.info('vueFlag : ' + vueFlag) ;
-           console.info('formData : ' + JSON.stringify(vm.$data)) ;*/
-
-        })
+    events: {
+      'child-submit': function (params) {
+         this.$broadcast('parent-saveGroup',params) ;
+      }
     }
   }
 </script>

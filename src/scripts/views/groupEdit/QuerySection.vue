@@ -16,7 +16,6 @@
   export default {
     methods:{
         saveFormData(){
-            //this.$emit('child-submit') ;
             var params = {"name":"yicj","addr":"henan"} ;
             this.$dispatch('child-submit',params) ;
         }

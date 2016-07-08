@@ -1,9 +1,6 @@
 <template>
-    <div class="navbar-fixed-top" id = "myheader">
+    <div class="navbar-fixed-top">
         <header-nav-comp></header-nav-comp>
-        <!--
-        <query-section v-on:child-submit="submitForm"></query-section>
-        -->
         <query-section></query-section>
     </div>
 </template>
@@ -14,9 +11,6 @@
     components: {
       HeaderNavComp,
       QuerySection
-    },
-    methods:{
-      
     }
   }
 </script>
