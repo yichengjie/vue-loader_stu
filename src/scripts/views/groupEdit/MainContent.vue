@@ -22,9 +22,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="pure-u-1-8 control-label">品牌集名称</label>
+                        <label class="pure-u-1-8 control-label">品牌集名称-{{editAble}}</label>
                         <div class="pure-u-1-4">
-                            <input type="text" v-model ="brandName"  class="form-control"  placeholder="数字">
+                            <input type="text" v-bind:disabled="!editAble" v-model ="brandName"  class="form-control"  placeholder="数字">
                         </div>
                     </div>
 
@@ -191,11 +191,24 @@
          travelStartDate:'',
          travelEndDate:'',
          pubList:[],
-         descr:''
+         descr:'',
+         status:'2'
       } ;
+    },
+    computed: {
+        // 一个计算属性的 getter
+        editAble: function () {
+          return this.status != '3'
+        }
     },
     events:{
         'parent-saveGroup':'saveFormData'
+    },
+    ready:function(){
+        var _self = this ;
+        setTimeout(function(){
+            _self.status = '3' ;
+        },2000) ;
     },
     methods:{
     	addLine(){
