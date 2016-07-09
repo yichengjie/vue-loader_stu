@@ -4,7 +4,7 @@
         <header-nav-comp></header-nav-comp>
         <query-section v-on:child-submit="childSubmit"></query-section>
     </div>
-    <main-content v-ref:profile></main-content>
+    <main-content v-ref:main-content></main-content>
   </div>
 </template>
 <script>
@@ -21,7 +21,7 @@
     },
     methods:{
       childSubmit(params){
-         var mainContent = this.$refs.profile ;
+         var mainContent = this.$refs.mainContent ;
          mainContent.saveFormData(params) ;
       }
     }

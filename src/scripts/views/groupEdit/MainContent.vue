@@ -199,13 +199,9 @@
       } ;
     },
     computed: {
-        // 一个计算属性的 getter
         editAble: function () {
           return this.status != '3'
         }
-    },
-    events:{
-        //'parent-saveGroup':'saveFormData'
     },
     ready:function(){
         var _self = this ;
