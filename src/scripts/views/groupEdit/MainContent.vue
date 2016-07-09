@@ -202,7 +202,7 @@
         }
     },
     events:{
-        'parent-saveGroup':'saveFormData'
+        //'parent-saveGroup':'saveFormData'
     },
     ready:function(){
         var _self = this ;

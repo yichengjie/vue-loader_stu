@@ -1,7 +1,7 @@
 <template>
   <div class="app">
-    <header-layout></header-layout>
-    <main-content></main-content>
+    <header-layout v-on:child-submit="childSubmit"></header-layout>
+    <main-content v-ref:profile></main-content>
   </div>
 </template>
 <script>
@@ -14,9 +14,10 @@
        HeaderLayout,
        MainContent
     },
-    events: {
-      'child-submit': function (params) {
-         this.$broadcast('parent-saveGroup',params) ;
+    methods:{
+      childSubmit(params){
+         var mainContent = this.$refs.profile ;
+         mainContent.saveFormData(params) ;
       }
     }
   }
