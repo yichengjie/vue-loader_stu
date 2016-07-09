@@ -1,17 +1,22 @@
 <template>
   <div class="app">
-    <header-layout v-on:child-submit="childSubmit"></header-layout>
+    <div class="navbar-fixed-top">
+        <header-nav-comp></header-nav-comp>
+        <query-section v-on:child-submit="childSubmit"></query-section>
+    </div>
     <main-content v-ref:profile></main-content>
   </div>
 </template>
 <script>
   'use strict' ;
-  import HeaderLayout from './HeaderLayout.vue' ;
+  import HeaderNavComp from '../../components/HeaderNavComp.vue' ;
+  import QuerySection from './QuerySection.vue' ;
   import MainContent from './MainContent.vue' ;
   //将表单的填写状态全部修改为修改过
   export default {
     components: {
-       HeaderLayout,
+       HeaderNavComp,
+       QuerySection,
        MainContent
     },
     methods:{

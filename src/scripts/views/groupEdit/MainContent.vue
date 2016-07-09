@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="pure-u-1-8 control-label">品牌集名称-{{editAble}}</label>
+                        <label class="pure-u-1-8 control-label">品牌集名称</label>
                         <div class="pure-u-1-4">
                             <input type="text" v-bind:disabled="!editAble" v-model ="brandName"  class="form-control"  placeholder="数字">
                         </div>
@@ -160,6 +160,9 @@
         </div>
     </form>
     </validator>
+    <pre>
+        {{$validation | json}}
+    </pre>
 </div>
 </template>
 <script>

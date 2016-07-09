@@ -1,6 +1,15 @@
 <template>
-   <div id="brand_group_list" v-for="l in list">
-		<div class="panel panel-default brand_group" >
+  <div class="container-fluid main_content" id="main_content" >
+     <div class="pull-right clearfix" style="margin-bottom: 8px">
+        <button type="button" class="btn btn-sm btn-success" onclick="window.location.href='groupEdit.html'">新建品牌集</button>
+        <button class="btn btn-info btn-sm">发布</button>
+        <button class="btn btn-warning btn-sm">截止</button>
+        <button class="btn btn-danger btn-sm">删除</button>
+    </div>
+    <span class="clearfix"></span>
+
+    <div id="brand_group_list" v-for="l in list">
+    <div class="panel panel-default brand_group" >
             <div class="panel-heading">
                 <div class="panel-title">
                     <div class="panel-title">
@@ -32,15 +41,16 @@
             </div>
         </div>
    </div>
+  </div>
 </template>
 
-<script>
+<script type="text/javascript">
   import { getBrandGroup } from '../../vuex/query/getters' ;
   export default {
-   vuex: {
-     getters: {
-       list: getBrandGroup
-     }
-   }
+    vuex: {
+      getters: {
+        list: getBrandGroup
+      }
+    }
   }
 </script>
