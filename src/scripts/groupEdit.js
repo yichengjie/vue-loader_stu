@@ -7,5 +7,8 @@ new Vue({
   el: 'body',
   components: {
     AppLayout
+  },
+  ready:function(){
+    
   }
 }) ;
