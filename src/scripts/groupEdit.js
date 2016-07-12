@@ -9,6 +9,6 @@ new Vue({
     AppLayout
   },
   ready:function(){
-    
+
   }
 }) ;
