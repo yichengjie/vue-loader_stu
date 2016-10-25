@@ -14,7 +14,7 @@
                 <span class="marginL10 marginR5">品牌集名称</span>
                 <input type="text" class="common_input" style="width: 120px"/>
                 <span class="pull-right marginR15">
-                    <button type="button" class="btn btn-sm btn-primary" @click ="queryBrandGroup('hello world')">查询</button>
+                    <button type="button" class="btn btn-sm btn-primary" >查询</button>
                 </span>
             </div>
             <div class="query_row">
